@@ -1,0 +1,102 @@
+.titleHead {
+    font-size: 40px;
+   
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color:bisque;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+}
+
+h1{
+    margin: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 60px;
+    margin-top: 60px;
+    border-bottom: 4px solid black;
+    padding-bottom: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid black;
+    border-radius: 20px;
+    background-color: rgba(222, 184, 135, 0.503);
+    width: 40%;
+    min-height: 600px;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 120px;
+}
+.formContainer form {
+    text-align: center;
+}
+.formContainer form input{
+
+ padding: 10px;
+ border-radius: 10px;
+ margin-bottom: 10px;
+ width: 300px;
+}
+
+.formContainer form button{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.formContainer form label{
+    font-size: 25px;
+}
+.alreadyInsc{
+    text-align: center;
+}
+.alreadyInsc h2{
+    margin-top: 80px;
+    font-size: 30px;
+    margin-bottom: 60px;
+}
+
+.alreadyInsc a{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 20px;
+    
+}
+
+footer{
+
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+}
+
+.inputContain{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}

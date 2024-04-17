@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Maureau",
+        "firstname": "Aurelien",
+        "mail": "a.maureau13400@gmail.com",
+        "password": "$2y$10$BdqFBMduCGx1NZUm65B0lutAimTji6d7BuQWDqN0vnMGGgD78rgGO"
+    },
+    {
+        "name": "michel",
+        "firstname": "journiac",
+        "mail": "micheljourniac@gmail.com",
+        "password": "$2y$10$Ene0NZBTRSgceu3qVqqQqOxVVNXe3u0Pv\/60Og4gVx2DH\/L1I.mJ2"
+    }
+]

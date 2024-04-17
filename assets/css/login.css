@@ -1,0 +1,116 @@
+.titleHead {
+    font-size: 40px;
+
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+}
+
+footer {
+
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+}
+
+h1 {
+    margin: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 60px;
+    margin-top: 60px;
+    border-bottom: 4px solid black;
+    padding-bottom: 10px;
+    width: 400px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    border: 0.5px solid black;
+    border-radius: 20px;
+    background-color: rgba(222, 184, 135, 0.503);
+    width: 40%;
+    min-height: 600px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 120px;
+}
+
+.formContainer form {
+    text-align: center;
+}
+
+.formContainer form input {
+
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 300px;
+}
+
+.formContainer form button {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.formContainer form label {
+    font-size: 25px;
+}
+
+.inputContain {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.error {
+    font-size: 50px;
+    color: red;
+    border: 3px solid rgb(145, 5, 5);
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 10px;
+}
+.suscribLink{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 25px;
+    background-color: rgb(240, 233, 233);
+  
+}
