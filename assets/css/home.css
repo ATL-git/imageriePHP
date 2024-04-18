@@ -85,3 +85,24 @@ h1 {
     font-size: 30px;
     margin-left: 40px;
 }
+
+.linkDelete{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    display: block;
+}
+
+.error{
+    font-size: 50px;
+    color: red;
+    border: 3px solid rgb(145, 5, 5);
+    width: 60% ;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 80px ;
+    padding: 10px;
+}

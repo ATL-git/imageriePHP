@@ -23,47 +23,59 @@
 
     <?php
     session_start();
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if (isset($_SESSION['user'])) {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-        if (isset($_FILES['img']) && $_FILES['img']['error'] === UPLOAD_ERR_OK) {
-
-            $fileTmpPath = $_FILES['img']['tmp_name'];
-            $fileName = $_FILES['img']['name'];
-            $fileSize = $_FILES['img']['size'];
-            $fileType = $_FILES['img']['type'];
-
-            $allowedTypes = array('image/jpeg', 'image/png', 'image/gif');
-            if (!in_array($fileType, $allowedTypes)) {
-                echo "<p class='error'>Erreur : Seuls les fichiers JPEG, PNG et GIF sont autorisés.</p>";
-                exit;
-            }
-
-            $uploadDir = '../assets/img/';
-            $destination = $uploadDir . $fileName;
-
-            if (move_uploaded_file($fileTmpPath, $destination)) {
-                echo "Le fichier $fileName a été téléchargé avec succès.";
-                $fileInfo = array(
-                    "name" => $_POST['name'],
-                    "path" => $destination,
-                    "mail" => $_SESSION['user']
-                );
-
-                $jsonData = file_get_contents("../bdd/img.json");
-                $data = json_decode($jsonData, true);
-
-
-                $data[] = $fileInfo;
-
-                $newJsonData = json_encode($data, JSON_PRETTY_PRINT);
-
-                file_put_contents("../bdd/img.json", $newJsonData);
+            if (empty($_POST['name'])) {
+                echo "<p class='error'>Erreur : veuillez fournir un nom pour l'image</p>";
             } else {
-                echo "<p class='error'>Erreur lors du téléchargement du fichier.</p>";
+                if (isset($_FILES['img']) && $_FILES['img']['error'] === UPLOAD_ERR_OK) {
+
+                    $fileTmpPath = $_FILES['img']['tmp_name'];
+                    $fileName = $_FILES['img']['name'];
+                    $fileSize = $_FILES['img']['size'];
+                    $fileType = $_FILES['img']['type'];
+
+                    $allowedTypes = array('image/jpeg', 'image/png', 'image/gif');
+                    if (!in_array($fileType, $allowedTypes)) {
+                        echo "<p class='error'>Erreur : Seuls les fichiers JPEG, PNG et GIF sont autorisés.</p>";
+                        exit;
+                    }
+
+                    $uploadDir = '../assets/img/';
+                    $destination = $uploadDir . $fileName;
+
+                    if (move_uploaded_file($fileTmpPath, $destination)) {
+                       
+                        $fileInfo = array(
+                            "name" => $_POST['name'],
+                            "path" => $destination,
+                            "mail" => $_SESSION['user']
+                        );
+
+                        $jsonData = file_get_contents("../bdd/img.json");
+                        $data = json_decode($jsonData, true);
+
+
+                        $data[] = $fileInfo;
+
+                        $newJsonData = json_encode($data, JSON_PRETTY_PRINT);
+
+                        file_put_contents("../bdd/img.json", $newJsonData);
+
+                        header("Location: ./home.php");
+                        exit;
+                    } else {
+                        echo "<p class='error'>Erreur lors du téléchargement du fichier.</p>";
+                    }
+                } else {
+                    echo "<p class='error'>Erreur : Aucun fichier n'a été téléchargé ou une erreur est survenue lors du téléchargement.</p>";
+                }
             }
-        } else {
-            echo "<p class='error'>Erreur : Aucun fichier n'a été téléchargé ou une erreur est survenue lors du téléchargement.</p>";
-        }
+        } 
+    }else {
+        header("Location: ./login.php");
+        exit;
     }
     ?>
 

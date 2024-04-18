@@ -83,8 +83,8 @@
 
     <script>
         function togglePasswordVisibility() {
-            var passwordInput = document.getElementById("password");
-            var toggleButton = document.getElementById("toggleButton");
+            let passwordInput = document.getElementById("password");
+            let toggleButton = document.getElementById("toggleButton");
             if (passwordInput.type === "password") {
                 passwordInput.type = "text";
                 toggleButton.innerHTML = "Masquer le mot de passe";
